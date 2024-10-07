@@ -18,7 +18,10 @@
     }
   },
   "scripts": {
-    "build": "tsup"
+    "type_check": "tsc --noEmit",
+    "build": "pnpm type_check && tsup",
+    "packing": "pnpm build && pnpm pack",
+    "publish": "pnpm build && pnpm publish --access public"
   },
   "keywords": [],
   "author": "",
